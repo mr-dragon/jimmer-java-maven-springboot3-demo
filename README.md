@@ -20,11 +20,12 @@
 
 ## Getting Started
 
-- 环境
+- 开发环境
     - spring-boot 3.x -> 3.2.11
     - jdk 17+
     - jimmer: 0.8.51
     - maven
+    - mysql 8.0.37
 - 修改后启动 UserTest
     - 修改数据库 ip 端口、帐号密码
     - 新建数据库： test 和 3个表
@@ -60,8 +61,8 @@ CREATE TABLE `order_detail`
 ) ENGINE = InnoDB
   DEFAULT CHARSET = utf8mb4;
 
--- [23000][1062] Duplicate entry 'name' for key 'idx_order_name'
-CREATE UNIQUE INDEX `idx_order_name` on `order` (`name`);
+-- 此sql执行不了：[23000][1062] Duplicate entry 'name' for key 'idx_order_name'
+-- CREATE UNIQUE INDEX `idx_order_name` on `order` (`name`);
 
 -- jimmer-demo -- end
 
